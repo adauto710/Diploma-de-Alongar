@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SESC - Jogo do Alongamento</title>
+    <title>SESC - Formação em Alongamento</title>
     <style>
         * {
             margin: 0;
@@ -24,7 +25,7 @@
         .game-container {
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             max-width: 800px;
             width: 90%;
             padding: 30px;
@@ -34,7 +35,7 @@
         }
 
         .sesc-header {
-            background: linear-gradient(90deg, #e74c3c, #c0392b);
+            background: linear-gradient(90deg,  #09dc37,  #09dc37);
             color: white;
             padding: 15px;
             border-radius: 15px;
@@ -45,7 +46,7 @@
         .sesc-logo {
             font-size: 28px;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .subtitle {
@@ -64,11 +65,19 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             color: #2c3e50;
             margin-bottom: 20px;
         }
@@ -90,7 +99,7 @@
             border-radius: 15px;
             margin: 20px 0;
             border-left: 5px solid #3498db;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .question {
@@ -132,21 +141,38 @@
         }
 
         .option.incorrect {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            background: linear-gradient(45deg,  #09dc37,  #09dc37);
             color: white;
-            border-color: #e74c3c;
+            border-color:  #09dc37;
             animation: shake 0.5s ease;
         }
 
         @keyframes correctPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
         }
 
         .btn {
@@ -220,13 +246,13 @@
 
         .feedback.correct {
             background: #d4edda;
-            color: #155724;
+            color:  #09dc37;
             border: 1px solid #c3e6cb;
         }
 
         .feedback.incorrect {
             background: #f8d7da;
-            color: #721c24;
+            color:  #09dc37;
             border: 1px solid #f5c6cb;
         }
 
@@ -237,19 +263,19 @@
             padding: 40px;
             margin: 20px 0;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .diploma-header {
             font-size: 32px;
             color: #2c3e50;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .diploma-title {
             font-size: 24px;
-            color: #e74c3c;
+            color: #09dc37;
             margin-bottom: 20px;
             font-weight: bold;
         }
@@ -263,7 +289,7 @@
 
         .participant-name {
             font-size: 28px;
-            color: #e74c3c;
+            color: #09dc37;
             font-weight: bold;
             text-decoration: underline;
             margin: 20px 0;
@@ -325,11 +351,11 @@
                 margin: 20px;
                 padding: 20px;
             }
-            
+
             .diploma-container {
                 padding: 20px;
             }
-            
+
             .name-input {
                 width: 100%;
             }
@@ -339,39 +365,41 @@
             body {
                 background: white;
             }
-            
+
             .game-container {
                 box-shadow: none;
                 max-width: none;
                 width: 100%;
             }
-            
+
             .screen:not(.diploma-screen) {
                 display: none !important;
             }
-            
-            .btn, .sesc-header {
+
+            .btn,
+            .sesc-header {
                 display: none;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="game-container">
         <div class="sesc-header">
-            <div class="sesc-logo">SESC CAMPO MOURÃO</div>
+            <div class="sesc-logo">CIPA NR5 - SESC CAMPO MOURÃO</div>
             <div class="subtitle">Programa de Qualidade de Vida no Trabalho</div>
         </div>
 
         <!-- Tela Inicial -->
         <div class="screen active" id="welcome-screen">
             <div class="activity-icon">🤸‍♂️</div>
-            <h1>Jogo do Alongamento</h1>
+            <h1>Formação em Alongamento</h1>
             <p style="font-size: 18px; margin: 20px 0; line-height: 1.6;">
                 Descubra a importância do alongamento para suas atividades diárias no trabalho!
                 Complete os três níveis e ganhe seu diploma de especialista em alongamento.
             </p>
-            
+
             <div class="tips-container">
                 <div class="tips-title">💡 Por que alongar no trabalho?</div>
                 <div class="tips-list">
@@ -383,7 +411,13 @@
                 </div>
             </div>
 
-            <input type="text" id="participant-name" class="name-input" placeholder="Digite seu nome completo" maxlength="50">
+            <input type="text" id="participant-name" class="name-input" placeholder="Digite seu nome completo"
+                maxlength="50">
+            <br>
+            <input type="text" id="participant-cpf" class="name-input" placeholder="Digite seu CPF (apenas números)"
+                maxlength="14" style="margin-top: 0;">
+            <br>
+            <input type="file" id="participant-photo" accept="image/*" style="margin: 10px 0 20px 0;">
             <br>
             <button class="btn" onclick="startGame()">🎯 Começar Jogo</button>
         </div>
@@ -391,7 +425,7 @@
         <!-- Tela do Jogo -->
         <div class="screen" id="game-screen">
             <div class="level-indicator" id="level-indicator">Nível 1 - Básico</div>
-            
+
             <div class="score-board">
                 <div class="score-item">
                     <span class="score-number" id="current-score">0</span>
@@ -417,7 +451,7 @@
             </div>
 
             <div class="feedback" id="feedback" style="display: none;"></div>
-            
+
             <button class="btn" id="next-btn" onclick="nextQuestion()" style="display: none;">
                 ➡️ Próxima Pergunta
             </button>
@@ -452,10 +486,14 @@
             <div class="diploma-container" id="diploma">
                 <div class="diploma-header">🏅 CERTIFICADO DE CONCLUSÃO 🏅</div>
                 <div class="diploma-title">Especialista em Alongamento no Trabalho</div>
-                
+
                 <div class="diploma-text">
                     Certificamos que
-                    <div class="participant-name" id="diploma-name">Nome do Participante</div>
+                    <div style="display: flex; align-items: center; flex-direction: column;">
+                        <img id="diploma-photo" src="" alt="Foto do Participante" style="display:none; width:120px; height:120px; object-fit:cover; border-radius:50%; border:3px solid #09dc37; margin-bottom:10px;">
+                        <div class="participant-name" id="diploma-name">Nome do Participante</div>
+                    </div>
+                    <div style="font-size:18px; color:#34495e; margin-bottom:10px;" id="diploma-cpf">CPF: 000.000.000-00</div>
                     concluiu com êxito o curso de
                     <strong>"Importância do Alongamento para Atividades de Serviço"</strong>
                     promovido pelo SESC Campo Mourão, demonstrando conhecimento sobre:
@@ -485,7 +523,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <button class="btn" onclick="printDiploma()">🖨️ Imprimir Diploma</button>
             <button class="btn" onclick="restartGame()">🎮 Novo Jogo</button>
         </div>
@@ -649,22 +687,73 @@
         let score = 0;
         let totalQuestions = 0;
         let participantName = "";
-        let gameCompleted = false;
+        let participantCpf = "";
+    let gameCompleted = false;
+    let participantPhotoDataUrl = "";
+
+        function validarCPF(cpf) {
+            cpf = cpf.replace(/\D/g, '');
+            if (cpf.length !== 11 || /^( {11}|(\d)\1{10})$/.test(cpf)) return false;
+            let soma = 0, resto;
+            for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            if (resto !== parseInt(cpf.substring(9, 10))) return false;
+            soma = 0;
+            for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            if (resto !== parseInt(cpf.substring(10, 11))) return false;
+            return true;
+        }
 
         function startGame() {
             const nameInput = document.getElementById('participant-name');
+            const cpfInput = document.getElementById('participant-cpf');
+            const photoInput = document.getElementById('participant-photo');
             if (nameInput.value.trim() === "") {
                 alert("Por favor, digite seu nome para continuar!");
                 nameInput.focus();
                 return;
             }
-            
+
+            if (cpfInput.value.trim() === "") {
+                alert("Por favor, digite seu CPF para continuar!");
+                cpfInput.focus();
+                return;
+            }
+
+            if (!validarCPF(cpfInput.value.trim())) {
+                alert("CPF inválido! Por favor, digite um CPF válido.");
+                cpfInput.focus();
+                return;
+            }
+
+            // Foto (opcional)
+            if (photoInput.files && photoInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    participantPhotoDataUrl = e.target.result;
+                    continueStartGame();
+                };
+                reader.readAsDataURL(photoInput.files[0]);
+                return; // Aguarda leitura da foto
+            } else {
+                participantPhotoDataUrl = "";
+                continueStartGame();
+            }
+        }
+
+        function continueStartGame() {
+            const nameInput = document.getElementById('participant-name');
+            const cpfInput = document.getElementById('participant-cpf');
             participantName = nameInput.value.trim();
+            participantCpf = cpfInput.value.trim();
             currentLevel = 1;
             currentQuestion = 0;
             score = 0;
             totalQuestions = Object.values(gameData).reduce((total, level) => total + level.questions.length, 0);
-            
+
             showScreen('game-screen');
             loadQuestion();
         }
@@ -679,24 +768,24 @@
         function loadQuestion() {
             const levelData = gameData[`level${currentLevel}`];
             const questionData = levelData.questions[currentQuestion];
-            
+
             // Atualizar indicadores
             document.getElementById('level-indicator').textContent = levelData.title;
             document.getElementById('current-score').textContent = score;
             document.getElementById('current-question').textContent = getCurrentQuestionNumber();
             document.getElementById('current-level').textContent = currentLevel;
-            
+
             // Atualizar barra de progresso
             const progress = (getCurrentQuestionNumber() - 1) / totalQuestions * 100;
             document.getElementById('progress').style.width = progress + '%';
-            
+
             // Carregar pergunta
             document.getElementById('question-text').textContent = questionData.question;
-            
+
             // Carregar opções
             const optionsContainer = document.getElementById('options-container');
             optionsContainer.innerHTML = '';
-            
+
             questionData.options.forEach((option, index) => {
                 const optionElement = document.createElement('div');
                 optionElement.className = 'option';
@@ -704,7 +793,7 @@
                 optionElement.onclick = () => selectOption(index);
                 optionsContainer.appendChild(optionElement);
             });
-            
+
             // Esconder feedback e botão próximo
             document.getElementById('feedback').style.display = 'none';
             document.getElementById('next-btn').style.display = 'none';
@@ -723,15 +812,15 @@
             const questionData = levelData.questions[currentQuestion];
             const options = document.querySelectorAll('.option');
             const feedback = document.getElementById('feedback');
-            
+
             // Desabilitar todas as opções
             options.forEach(option => {
                 option.onclick = null;
             });
-            
+
             // Verificar resposta
             const isCorrect = selectedIndex === questionData.correct;
-            
+
             if (isCorrect) {
                 score += 10;
                 options[selectedIndex].classList.add('correct');
@@ -749,7 +838,7 @@
                     ${questionData.explanation}
                 `;
             }
-            
+
             feedback.style.display = 'block';
             document.getElementById('next-btn').style.display = 'inline-block';
             document.getElementById('current-score').textContent = score;
@@ -757,35 +846,35 @@
 
         function nextQuestion() {
             currentQuestion++;
-            
+
             // Verificar se ainda há perguntas no nível atual
             const levelData = gameData[`level${currentLevel}`];
             if (currentQuestion >= levelData.questions.length) {
                 // Avançar para o próximo nível
                 currentLevel++;
                 currentQuestion = 0;
-                
+
                 // Verificar se o jogo terminou
                 if (currentLevel > 3) {
                     endGame();
                     return;
                 }
             }
-            
+
             loadQuestion();
         }
 
         function endGame() {
             gameCompleted = true;
             const percentage = Math.round((score / (totalQuestions * 10)) * 100);
-            
+
             document.getElementById('final-score').textContent = score;
             document.getElementById('final-percentage').textContent = percentage + '%';
-            
+
             // Título baseado na performance
             const resultTitle = document.getElementById('result-title');
             const finalTips = document.getElementById('final-tips');
-            
+
             if (percentage >= 90) {
                 resultTitle.textContent = '🏆 Excelente! Você é um especialista!';
                 finalTips.innerHTML = `
@@ -823,18 +912,29 @@
                     • Procure orientação no SESC Campo Mourão
                 `;
             }
-            
+
             showScreen('results-screen');
         }
 
         function generateDiploma() {
             const percentage = Math.round((score / (totalQuestions * 10)) * 100);
-            
+
             // Preencher dados do diploma
             document.getElementById('diploma-name').textContent = participantName;
+            document.getElementById('diploma-cpf').textContent = `CPF: ${participantCpf}`;
             document.getElementById('diploma-score').textContent = score;
             document.getElementById('diploma-percentage').textContent = percentage + '%';
-            
+
+            // Foto
+            const diplomaPhoto = document.getElementById('diploma-photo');
+            if (participantPhotoDataUrl) {
+                diplomaPhoto.src = participantPhotoDataUrl;
+                diplomaPhoto.style.display = 'block';
+            } else {
+                diplomaPhoto.src = '';
+                diplomaPhoto.style.display = 'none';
+            }
+
             // Data atual formatada
             const today = new Date();
             const formattedDate = today.toLocaleDateString('pt-BR', {
@@ -843,7 +943,7 @@
                 year: 'numeric'
             });
             document.getElementById('diploma-date').textContent = formattedDate;
-            
+
             showScreen('diploma-screen');
         }
 
@@ -857,21 +957,22 @@
             currentQuestion = 0;
             score = 0;
             gameCompleted = false;
-            
+
             // Limpar nome se quiser
             document.getElementById('participant-name').value = participantName;
-            
+            document.getElementById('participant-cpf').value = '';
+
             // Voltar para tela inicial
             showScreen('welcome-screen');
         }
 
         // Inicialização
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Focus no campo de nome
             document.getElementById('participant-name').focus();
-            
+
             // Enter para começar o jogo
-            document.getElementById('participant-name').addEventListener('keypress', function(e) {
+            document.getElementById('participant-name').addEventListener('keypress', function (e) {
                 if (e.key === 'Enter') {
                     startGame();
                 }
@@ -879,7 +980,7 @@
         });
 
         // Prevenir reload acidental durante o jogo
-        window.addEventListener('beforeunload', function(e) {
+        window.addEventListener('beforeunload', function (e) {
             if (!gameCompleted && (currentLevel > 1 || currentQuestion > 0)) {
                 const confirmationMessage = 'Tem certeza que deseja sair? Seu progresso será perdido.';
                 e.returnValue = confirmationMessage;
@@ -888,4 +989,5 @@
         });
     </script>
 </body>
+
 </html>
